@@ -1,0 +1,17 @@
+Para executar a query abaixo:
+
+SQL Server Object Explorer > expandir o banco > Databases > Banco desejado
+botão direito em Tables> add new table 
+
+Na parte de baixo da janela "T-SQL" cole esta query
+clique no botão "update" na parte de cima da janela
+
+
+
+CREATE TABLE [dbo].[Produtos] (
+    [Id] INT IDENTITY(1,1) NOT NULL,
+    [Nome] NVARCHAR(MAX),
+    [Categoria] NVARCHAR(MAX),
+    [Preco] FLOAT (53),
+    CONSTRAINT [PK_Produtos] PRIMARY KEY ([Id])
+);

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace Alura.Loja.Testes.ConsoleApp
+namespace Alura.Loja.Testes.ConsoleApp.Context
 {
   internal class LojaContext : DbContext
   {

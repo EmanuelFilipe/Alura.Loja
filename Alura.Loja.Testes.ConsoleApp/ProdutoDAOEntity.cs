@@ -1,4 +1,5 @@
-﻿using Alura.Loja.Testes.ConsoleApp.Interfaces;
+﻿using Alura.Loja.Testes.ConsoleApp.Context;
+using Alura.Loja.Testes.ConsoleApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -10,8 +10,7 @@ namespace Alura.Loja.Testes.ConsoleApp
   {
     static void Main(string[] args)
     {
-      //GravarUsandoAdoNet();
-      GravarUsandoEntity();
+      //GravarUsandoEntity();
     }
 
     private static void AtualizarProduto()
@@ -24,12 +23,13 @@ namespace Alura.Loja.Testes.ConsoleApp
         repo.Atualizar(primeiro);
       }
     }
+
     private static void GravarUsandoEntity()
     {
       Produto p = new Produto();
       p.Nome = "Cassino Royale";
       p.Categoria = "Filmes";
-      p.Preco = 19.89;
+      p.PrecoUnitario = 19.89;
 
       using (var repo = new ProdutoDAOEntity())
       {
