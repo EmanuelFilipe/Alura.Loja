@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Alura.Loja.Testes.ConsoleApp.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace Alura.Loja.Testes.ConsoleApp.Context
@@ -7,6 +8,17 @@ namespace Alura.Loja.Testes.ConsoleApp.Context
     {
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Compra> Compras { get; set; }
+        public DbSet<Promocao> Promocoes { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Informando ao EF chave primaria composta
+            modelBuilder.Entity<PromocaoProduto>()
+                        .HasKey(pp => new { pp.PromocaoId, pp.ProdutoId });
+
+            base.OnModelCreating(modelBuilder);
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

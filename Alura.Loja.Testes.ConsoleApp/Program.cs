@@ -1,4 +1,5 @@
 ﻿using Alura.Loja.Testes.ConsoleApp.Context;
+using Alura.Loja.Testes.ConsoleApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,24 +12,23 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //GravarUsandoEntity();
+            var p1 = new Produto() { Nome = "Suco de Laranja", Categoria = "Bebidas", PrecoUnitario = 8.79, Unidade = "Litros" };
+            var p2 = new Produto() { Nome = "Café", Categoria = "Bebidas", PrecoUnitario = 12.99, Unidade = "Gramas" };
+            var p3 = new Produto() { Nome = "Macarrão", Categoria = "Alimentos", PrecoUnitario = 4.99, Unidade = "Gramas" };
 
-            var pao = new Produto();
-            pao.Nome = "Pão Francês";
-            pao.PrecoUnitario = 0.40;
-            pao.Unidade = "Unidade";
-            pao.Categoria = "Padaria";
+            var promo = new Promocao();
+            promo.Descricao = "Páscoa Feliz";
+            promo.DataInicio = DateTime.Now;
+            promo.DataFim = DateTime.Now.AddMonths(3);
+            promo.IncluiProduto(p1);
+            promo.IncluiProduto(p2);
+            promo.IncluiProduto(p3);
 
-            var compra = new Compra();
-            compra.Quantidade = 6;
-            compra.Produto = pao;
-            compra.Preco = pao.PrecoUnitario * compra.Quantidade;
-
-            //using (var contexto = new LojaContext())
-            //{
-            //    contexto.Compras.Add(compra);
-            //    contexto.SaveChanges();
-            //}
+            using (var contexto = new LojaContext())
+            {
+                contexto.Promocoes.Add(promo);
+                contexto.SaveChanges();
+            }
         }
 
         private static void AtualizarProduto()
