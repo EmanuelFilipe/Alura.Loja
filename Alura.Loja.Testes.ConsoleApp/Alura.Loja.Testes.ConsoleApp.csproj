@@ -169,6 +169,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20210210230056_Cliente.cs" />
+    <Compile Include="Migrations\20210210230056_Cliente.designer.cs">
+      <DependentUpon>20210210230056_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Migrations\20210210214516_ProdutoPromocao.cs" />
     <Compile Include="Migrations\20210210214516_ProdutoPromocao.designer.cs">
       <DependentUpon>20210210214516_ProdutoPromocao.cs</DependentUpon>

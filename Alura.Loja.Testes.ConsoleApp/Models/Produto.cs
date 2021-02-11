@@ -19,6 +19,8 @@ namespace Alura.Loja.Testes.ConsoleApp
         //public virtual IList<Promocao> Promocoes { get; set; }
         public IList<PromocaoProduto> Promocoes { get; internal set; }
 
+        public IList<Compra> Compras { get; set; }
+
         public override string ToString()
         {
             return $"Produto: {Id}, {Nome}, {Categoria}, {PrecoUnitario}";
